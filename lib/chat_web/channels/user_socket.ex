@@ -1,5 +1,6 @@
 defmodule ChatWeb.UserSocket do
   use Phoenix.Socket
+  use Absinthe.Phoenix.Socket, schema: ChatWeb.Schema
 
   ## Channels
   # channel "room:*", ChatWeb.RoomChannel

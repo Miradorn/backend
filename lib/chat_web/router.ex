@@ -22,7 +22,10 @@ defmodule ChatWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ChatWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: ChatWeb.Schema,
+      socket: ChatWeb.UserSocket
+
     forward "/", Absinthe.Plug, schema: ChatWeb.Schema
   end
 end
